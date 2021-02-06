@@ -1,15 +1,22 @@
 import React from 'react'
 import { Link } from "react-router-dom";
-import { Card, Col, Row, Image, ListGroup, Container } from "react-bootstrap";
+import { Card, Col, Row, Image, ListGroup, Container, Button } from "react-bootstrap";
+import Popup from 'reactjs-popup';
+import 'reactjs-popup/dist/index.css';
+
+import Modal from '../../../common/Modal'
+//
 
 const Detail = props => {
 
-    const { title, category_id, featured_image, rate, description } = props.location.state || {}
+    const { id, title, category_id, featured_image, rate, description, location } = props.location.state || {}
 
     // console.log(props)
 
     const category = () => category_id === 1 ? 'birthday' : category_id === 2 ? 'corporate' : 'wedding'
 
+    const contentStyle = { background: '#fff' };
+    const overlayStyle = { background: 'rgba(255,255,255,0.5)' };
 
     return (
         <>
@@ -29,6 +36,9 @@ const Detail = props => {
                                 <h2>{title}</h2>
                             </ListGroup.Item>
                             <ListGroup.Item>
+                                Location: {location}
+                            </ListGroup.Item>
+                            <ListGroup.Item>
                                 Rate: ${rate}
                             </ListGroup.Item>
                             <ListGroup.Item>
@@ -37,25 +47,25 @@ const Detail = props => {
                         </ListGroup>
                     </Col>
                     <Col md={3}>
-                        <Card>
-                            <ListGroup variant='flush'>
+                        <Card className='border-0'>
+                            <ListGroup variant='flush' className="text-center">
                                 <ListGroup.Item>
                                     <Row>
                                         <Col>
-                                            Rate:
-                                        </Col>
-                                        <Col>
-                                            <strong>${rate}</strong>
+                                            <strong>READY TO BOOK?</strong>
                                         </Col>
                                     </Row>
-                                </ListGroup.Item>
-                                <ListGroup.Item>
                                     <Row>
                                         <Col>
-                                            Pick a date
-                                        </Col>
-                                        <Col>
-                                            <strong>dd/mm/yy</strong>
+                                            <Popup trigger={<Button variant="success">PICK A DATE</Button>}
+                                                modal {...{ contentStyle, overlayStyle}}>
+                                                {close => (
+                                                    <>
+                                                        <button className="close" onClick={close}>&times;</button>
+                                                        <Modal propertyId={id} title={title} finished={() => { close() }} />
+                                                    </>
+                                                )}
+                                            </Popup>
                                         </Col>
                                     </Row>
                                 </ListGroup.Item>

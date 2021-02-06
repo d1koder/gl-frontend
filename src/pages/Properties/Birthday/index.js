@@ -7,8 +7,6 @@ import propertyReducer from '../../../utils/reducers/propertyReducer'
 import {getProperties} from '../../../services/propertyServices'
 import {UserContext} from '../../../utils/context/userContext'
 
-
-
 const initialState = {
     isLoading: false,
     error: '',
@@ -30,7 +28,8 @@ const Birthday = (props) => {
             dispatch({ type: 'PROPERTIES_LIST_REQUEST_SUCCESS', payload: data })
         })
         .catch((error)=>{
-            dispatch({ type: 'PROPERTIES_LIST_REQUEST_FAIL', payload: error.message })
+            console.log(error)
+            dispatch({ type: 'PROPERTIES_LIST_REQUEST_FAIL', payload: error})
         })
     }, [loggedInState.jwt])
 

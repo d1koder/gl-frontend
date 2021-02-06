@@ -29,7 +29,8 @@ const Corporate = (props) => {
             dispatch({ type: 'PROPERTIES_LIST_REQUEST_SUCCESS', payload: data })
         })
         .catch((error)=>{
-            dispatch({ type: 'PROPERTIES_LIST_REQUEST_FAIL', payload: error.message })
+            console.log(error)
+            dispatch({ type: 'PROPERTIES_LIST_REQUEST_FAIL', payload: error })
         })
     }, [loggedInState.jwt])
 

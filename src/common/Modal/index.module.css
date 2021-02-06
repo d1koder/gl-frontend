@@ -1,0 +1,57 @@
+.title {
+  text-align: center;
+  font-size: 28px;
+  padding: 10px 15px;
+  margin: 10px auto 5px;
+}
+
+.from {
+  float: left;
+  margin-left: 19%;
+  /* vertical-align: middle; */
+}
+
+.clearFix {
+  margin-left: 5%
+}
+
+.startDate {
+  float: left;
+  left:50%
+}
+
+.react-datepicker-wrapper,
+.react-datepicker__input-container,
+.react-datepicker__input-container input {
+  float: left!important;
+}
+
+.to {
+  float: left;
+  left:50%
+}
+
+.endDate {
+  float: left;
+  left:50%
+}
+
+.clearFix::after{
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.button {
+    display: block;
+    box-sizing: border-box;
+    width: 30%;
+    border-radius: 10px;
+    border: 1px solid white;
+    padding: 10px 15px;
+    margin: 20px auto ;
+    font-size: 14px;
+    background-color: rgba(235, 104, 100, 1);
+    color: white
+  }
+
