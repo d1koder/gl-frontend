@@ -36,7 +36,7 @@ const SignUp = () => {
         }
 
 
-        fetch(process.env.REACT_APP_API_ENDPOINT + 'auth/sign_up', requestOptions)
+        fetch(process.env.REACT_APP_API_ENDPOINT + '/auth/sign_up', requestOptions)
             .then(response => {
                 if (response.ok) {
                     return response.json();

@@ -3,7 +3,7 @@ export const getBookings = async () => {
 
     try {
         // http://localhost:3000/api/bookings
-        const response = await fetch(process.env.REACT_APP_API_ENDPOINT + 'bookings', {
+        const response = await fetch(process.env.REACT_APP_API_ENDPOINT + '/bookings', {
             headers: {
                 'Authorization': token
             }
@@ -26,7 +26,7 @@ export const createBooking = async (request) => {
     let token = "Bearer " + localStorage.getItem("jwt")
 
     try {
-        const response = fetch(process.env.REACT_APP_API_ENDPOINT + 'bookings', {
+        const response = fetch(process.env.REACT_APP_API_ENDPOINT + '/bookings', {
             method: 'POST',
             headers: new Headers({
                 'Content-Type': 'application/json;charset=utf-8;',
@@ -53,7 +53,7 @@ export const deleteBooking = async (id) => {
     let token = "Bearer " + localStorage.getItem("jwt")
 
     try {
-        const response = await fetch( process.env.REACT_APP_API_ENDPOINT +`${id}`, {
+        const response = await fetch( process.env.REACT_APP_API_ENDPOINT +`/${id}`, {
             method: 'DELETE',
             headers: new Headers({
                 'Authorization': token
