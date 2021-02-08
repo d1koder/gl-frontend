@@ -51,7 +51,7 @@ const Header = ({ state }) => {
                                             </NavDropdown.Item>
                                         </LinkContainer>
                                     </NavDropdown>
-                                    <Nav.Link onClick={logoutHandler}><i className='fas fa-sign-out-alt'></i>Log out
+                                    <Nav.Link onClick={logoutHandler}><i className='fas fa-sign-out-alt' data-testid="logout"></i>Log out
                                     </Nav.Link>
                                 </>
                                 :

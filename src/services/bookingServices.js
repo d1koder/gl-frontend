@@ -2,6 +2,7 @@ export const getBookings = async () => {
     let token = "Bearer " + localStorage.getItem("jwt")
 
     try {
+        // const response = await fetch(process.env.REACT_APP_API_ENDPOINT + '/bookings', 
         // http://localhost:3000/api/bookings
         const response = await fetch(process.env.REACT_APP_API_ENDPOINT + '/bookings', {
             headers: {

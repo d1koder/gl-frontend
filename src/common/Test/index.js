@@ -27,12 +27,15 @@ export default class Test extends Component {
         formData.append('category_id', this.state.category_id)
         formData.append('rate', this.state.rate)
 
+        // await fetch(process.env.REACT_APP_API_ENDPOINT + 'properties', {
         await fetch('http://localhost:3000/api/properties', {
             method: 'POST',
             body: formData
         })
             .catch(error => console.log(error))
 
+
+        // const response = await fetch(process.env.REACT_APP_API_ENDPOINT + '/properties')
         const response = await fetch('http://localhost:3000/api/properties')
         const data = await response.json();
         console.log(data);

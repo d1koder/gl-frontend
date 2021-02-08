@@ -17,7 +17,7 @@ import 'reactjs-popup/dist/index.css';
 
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
+//
 
 const initialState = {
     isLoading: false,
@@ -132,7 +132,7 @@ const Bookings = (props) => {
             {
                 state.isLoading ? <h2>Loading...</h2>
                     :
-                    state.error !== '' ? <h4>Oops😅, something went wrong</h4>
+                    state.error !== '' ? <Container style={{ paddingTop: '3vh' }}><h4>Oops😅, something went wrong</h4></Container>
                         :
                         props.location.state === undefined ?
                             <Container style={{ paddingTop: '3vh' }}>
@@ -146,8 +146,8 @@ const Bookings = (props) => {
                                     />
                                 </Row>
                                 <Row>
-                                    <Col md={{ span: 2, offset: 10 }}>
-                                        <h3>Total: ${sum()}</h3>
+                                    <Col md={{ span: 3, offset: 10 }}>
+                                        <h5>Total: ${sum()}</h5>
                                     </Col>
                                 </Row>
                                 <Row>

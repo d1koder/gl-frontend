@@ -35,8 +35,13 @@ const SignUp = () => {
             body: JSON.stringify(request)
         }
 
+<<<<<<< HEAD
 
         fetch(process.env.REACT_APP_API_ENDPOINT + '/auth/sign_up', requestOptions)
+=======
+        // fetch(process.env.REACT_APP_API_ENDPOINT + '/auth/sign_up', requestOptions)
+        fetch('http://localhost:3000/api' + '/auth/sign_up', requestOptions)
+>>>>>>> b9e3712753bd592924377836c8f5ba57aa60900f
             .then(response => {
                 if (response.ok) {
                     return response.json();
