@@ -41,7 +41,7 @@ const Properties = () => {
                     </Row>
                 </Container>
             </Container>
-            <Test />
+            {/* <Test /> */}
         </>
         
     )

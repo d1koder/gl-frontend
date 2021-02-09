@@ -44,6 +44,7 @@ export default class Test extends Component {
         this.input2.value = ''
         this.input3.value = 1
         this.input4.value = 0.0
+        this.input5.value = ''
     };
 
     render() {
@@ -60,6 +61,8 @@ export default class Test extends Component {
                     </select>
 
                     <input type="text" name="rate" placeholder="please set the rate" ref={currNode => this.input4 = currNode} onChange={this.handleChange} />
+
+                    <input type="text" name="location" placeholder="please type in the location" ref={currNode => this.input5 = currNode} onChange={this.handleChange} />
 
                     <input type="file" accept="image/*" multiple={false} onChange={this.onImageChange} />
                     <button>press me</button>
