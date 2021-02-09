@@ -36,7 +36,9 @@ const Modal = ({ title, propertyId, finished}) => {
       body: JSON.stringify(request)
     }
 
-    fetch('http://localhost:3000/api/bookings', requestOptions)
+    // fetch('http://localhost:3000/api/bookings', requestOptions)
+
+    fetch(process.env.REACT_APP_API_ENDPOINT + '/bookings', requestOptions)
       .then(response => {
         if (response.ok) {
           return response.json();

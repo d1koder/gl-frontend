@@ -28,7 +28,7 @@ export default class Test extends Component {
         formData.append('rate', this.state.rate)
 
         // await fetch(process.env.REACT_APP_API_ENDPOINT + 'properties', {
-        await fetch('http://localhost:3000/api/properties', {
+        await fetch(process.env.REACT_APP_API_ENDPOINT + '/properties', {
             method: 'POST',
             body: formData
         })
@@ -36,7 +36,7 @@ export default class Test extends Component {
 
 
         // const response = await fetch(process.env.REACT_APP_API_ENDPOINT + '/properties')
-        const response = await fetch('http://localhost:3000/api/properties')
+        const response = await fetch(process.env.REACT_APP_API_ENDPOINT + '/properties')
         const data = await response.json();
         console.log(data);
 

@@ -27,6 +27,7 @@ export const createBooking = async (request) => {
     let token = "Bearer " + localStorage.getItem("jwt")
 
     try {
+        // const response = await fetch(process.env.REACT_APP_API_ENDPOINT + '/bookings', 
         const response = fetch(process.env.REACT_APP_API_ENDPOINT + '/bookings', {
             method: 'POST',
             headers: new Headers({
@@ -54,7 +55,8 @@ export const deleteBooking = async (id) => {
     let token = "Bearer " + localStorage.getItem("jwt")
 
     try {
-        const response = await fetch( process.env.REACT_APP_API_ENDPOINT +`/${id}`, {
+        // const response = await fetch( process.env.REACT_APP_API_ENDPOINT  +`/bookings/${id}`, {
+        const response = await fetch( process.env.REACT_APP_API_ENDPOINT +`/bookings/${id}`, {
             method: 'DELETE',
             headers: new Headers({
                 'Authorization': token

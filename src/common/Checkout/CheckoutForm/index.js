@@ -14,7 +14,7 @@ class CheckoutForm extends Component {
     handleSubmit = async () => {
         let { token } = await this.props.stripe.createToken({ name: 'Ji Yan' })
         // let response = await fetch(process.env.REACT_APP_API_ENDPOINT + '/charges', {
-        let response = await fetch('http://localhost:3000/api/charges', {
+        let response = await fetch(process.env.REACT_APP_API_ENDPOINT + '/charges', {
             method: 'POST',
             headers: new Headers({
                 'Content-Type': 'application/json;charset=utf-8;',

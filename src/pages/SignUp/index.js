@@ -35,7 +35,11 @@ const SignUp = () => {
             body: JSON.stringify(request)
         }
 
+<<<<<<< HEAD
 
+=======
+        // fetch(process.env.REACT_APP_API_ENDPOINT + '/auth/sign_up', requestOptions)
+>>>>>>> 351fc4776a4684915a3e526ba476e38d99b1f427
         fetch(process.env.REACT_APP_API_ENDPOINT + '/auth/sign_up', requestOptions)
             .then(response => {
                 if (response.ok) {
@@ -82,7 +86,7 @@ const SignUp = () => {
             <h1 style={{ marginTop: "10vh", marginBottom: "5vh" }}>
                 Sign Up
             </h1>
-            <Form onSubmit={handleSubmit(onSubmit)}>
+            <Form onSubmit={handleSubmit(onSubmit)} data-testid="signUpForm">
                 <Form.Group controlId="username">
                     <Form.Label>Username: </Form.Label>
                     <Form.Control

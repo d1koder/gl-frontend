@@ -32,6 +32,7 @@ const Login = () => {
         }
 
         fetch(process.env.REACT_APP_API_ENDPOINT + '/auth/login', requestOptions)
+        // fetch('http://localhost:3000/api' + '/auth/login', requestOptions)
             .then(response => {
                 if (response.ok) {
                     return response.json();

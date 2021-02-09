@@ -7,6 +7,8 @@ import Wedding from './Wedding';
 import Birthday from './Birthday';
 import Corporate from './Corporate';
 
+import Test from '../../common/Test'
+
 const Properties = () => {
     return (
         <>
@@ -39,7 +41,9 @@ const Properties = () => {
                     </Row>
                 </Container>
             </Container>
+            <Test />
         </>
+        
     )
 }
 

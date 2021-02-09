@@ -11,8 +11,8 @@ describe("login form test", () => {
         .should("have.value", "admin@example.com")
   
         cy.get('input[name="password"]')
-        .type("password")
-        .should("have.value", "password")
+        .type("@password")
+        .should("have.value", "@password")
     }) 
     
     it("should render a button and allow users to login, and then be directed to root path", () => {
